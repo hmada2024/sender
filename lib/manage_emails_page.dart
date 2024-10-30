@@ -68,11 +68,7 @@ class ManageEmailsPage extends StatelessWidget {
           actions: [
             ElevatedButton(
               onPressed: () {
-                emailProvider.savedEmails[index] = {
-                  'email': emailController.text,
-                  'password': passwordController.text,
-                };
-                emailProvider.notifyListeners();
+                emailProvider.updateCredentials(index, emailController.text, passwordController.text);
                 Navigator.of(context).pop();
               },
               child: const Text('Save'),

@@ -11,7 +11,13 @@ class EmailProvider with ChangeNotifier {
       savedEmails.add({'email': email, 'password': pass});
       notifyListeners();
     } else {
-      // يمكنك تنفيذ رمز الإشعار هنا لتخبر المستخدم أنه يمكنه حفظ 3 بريد إلكتروني فقط
+print('Cannot save more than 3 emails. If you need to make changes, contact the developer.');    }
+  }
+
+  void updateCredentials(int index, String email, String pass) {
+    if (index < savedEmails.length) {
+      savedEmails[index] = {'email': email, 'password': pass};
+      notifyListeners();
     }
   }
 
