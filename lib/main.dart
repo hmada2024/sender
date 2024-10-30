@@ -15,7 +15,6 @@ class MyApp extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (_) => EmailProvider(),
       child: MaterialApp(
-        debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primarySwatch: Colors.blue,
           inputDecorationTheme: const InputDecorationTheme(
